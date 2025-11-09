@@ -26,7 +26,7 @@ namespace congresoAPI.Models
 
         public bool AceptaTerminos { get; set; }
 
-        [JsonIgnore] // ❌ evita que Swagger lo pida en el body
-        public string? CodigoQR { get; set; } // Se genera en el servidor
+        [JsonIgnore]
+        public string? CodigoQR { get; set; }
     }
 }

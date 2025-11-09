@@ -5,10 +5,9 @@ using congresoAPI.Models;
 
 namespace congresoAPI.Controllers
 {
-    // ✅ Ruta base igual a la del Swagger: /api/participante-qr
     [Route("api/participante-qr")]
     [ApiController]
-    [Tags("Par")] // ✅ Hace que en Swagger aparezca en el grupo “Par”
+    [Tags("Par")]
     public class ParticipanteController : ControllerBase
     {
         private readonly clsParticipanteData _data;
@@ -18,7 +17,6 @@ namespace congresoAPI.Controllers
             _data = data;
         }
 
-        // ✅ GET: /api/participante-qr
         [HttpGet]
         public async Task<IActionResult> Listar()
         {
@@ -37,7 +35,6 @@ namespace congresoAPI.Controllers
             }
         }
 
-        // ✅ GET: /api/participante-qr/{IdParticipante}
         [HttpGet("{IdParticipante}")]
         public async Task<IActionResult> Obtener(int IdParticipante)
         {
@@ -56,7 +53,6 @@ namespace congresoAPI.Controllers
             }
         }
 
-        // ✅ POST: /api/participante-qr
         [HttpPost]
         public async Task<IActionResult> Crear([FromBody] clsParticipante p)
         {
@@ -79,7 +75,6 @@ namespace congresoAPI.Controllers
             }
         }
 
-        // ✅ DELETE: /api/participante-qr/{IdParticipante}
         [HttpDelete("{IdParticipante}")]
         public async Task<IActionResult> Eliminar(int IdParticipante)
         {

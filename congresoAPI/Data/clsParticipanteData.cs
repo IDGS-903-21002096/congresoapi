@@ -15,7 +15,6 @@ namespace congresoAPI.Data
             _connectionString = configuration.GetConnectionString("CadenaSQL");
         }
 
-        // ✅ Listar todos los participantes
         public async Task<List<clsParticipante>> ListaParticipantes()
         {
             var lista = new List<clsParticipante>();
@@ -45,7 +44,6 @@ namespace congresoAPI.Data
             return lista;
         }
 
-        // ✅ Obtener un participante por ID
         public async Task<clsParticipante?> ObtenerParticipante(int id)
         {
             clsParticipante? participante = null;
@@ -76,12 +74,10 @@ namespace congresoAPI.Data
             return participante;
         }
 
-        // ✅ Crear participante con generación de QR en Base64
         public async Task<bool> CrearParticipante(clsParticipante p)
         {
             try
             {
-                // 🧾 Contenido del QR
                 string qrContent =
                     $"Congreso TICs - UTL\n" +
                     $"Nombre: {p.Nombre} {p.Apellidos}\n" +
@@ -89,19 +85,16 @@ namespace congresoAPI.Data
                     $"Twitter: {p.UsuarioTwitter ?? "N/A"}\n" +
                     $"Ocupación: {p.Ocupacion}";
 
-                // 🧩 Generar QR
                 using var qrGenerator = new QRCodeGenerator();
                 using var qrData = qrGenerator.CreateQrCode(qrContent, QRCodeGenerator.ECCLevel.Q);
                 using var qrCode = new QRCode(qrData);
                 using var qrBitmap = qrCode.GetGraphic(20);
 
-                // 📦 Convertir a Base64
                 using var ms = new MemoryStream();
                 qrBitmap.Save(ms, ImageFormat.Png);
                 string base64QR = $"data:image/png;base64,{Convert.ToBase64String(ms.ToArray())}";
                 p.CodigoQR = base64QR;
 
-                // 💾 Insertar en BD
                 using var con = new SqlConnection(_connectionString);
                 await con.OpenAsync();
 
@@ -131,7 +124,6 @@ namespace congresoAPI.Data
             }
         }
 
-        // ✅ Eliminar participante
         public async Task<bool> EliminarParticipante(int id)
         {
             using var con = new SqlConnection(_connectionString);
