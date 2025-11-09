@@ -1,0 +1,93 @@
+[
+  {
+    "ContainingType": "congresoAPI.Controllers.ParticipanteController",
+    "Method": "Listar",
+    "RelativePath": "api/participante-qr",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Par"
+    ]
+  },
+  {
+    "ContainingType": "congresoAPI.Controllers.ParticipanteController",
+    "Method": "Crear",
+    "RelativePath": "api/participante-qr",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "p",
+        "Type": "congresoAPI.Models.clsParticipante",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Par"
+    ]
+  },
+  {
+    "ContainingType": "congresoAPI.Controllers.ParticipanteController",
+    "Method": "Obtener",
+    "RelativePath": "api/participante-qr/{IdParticipante}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdParticipante",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Par"
+    ]
+  },
+  {
+    "ContainingType": "congresoAPI.Controllers.ParticipanteController",
+    "Method": "Eliminar",
+    "RelativePath": "api/participante-qr/{IdParticipante}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdParticipante",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Par"
+    ]
+  },
+  {
+    "ContainingType": "congresoAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[congresoAPI.WeatherForecast, congresoAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

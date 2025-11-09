@@ -1,0 +1,6 @@
+@congresoAPI_HostAddress = http://localhost:5008
+
+GET {{congresoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
